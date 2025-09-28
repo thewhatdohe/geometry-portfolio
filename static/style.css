@@ -123,16 +123,14 @@ main {
 }
 
 .dropdown-content {
-  display: none;
-  padding: 0.5rem 0 1rem 0;
-  color: #333;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
 }
-
 .dropdown-content.open {
-  display: block;
+  opacity: 1;
 }
-
-
 
 /* Footer */
 footer {

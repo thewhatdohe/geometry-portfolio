@@ -36,7 +36,7 @@ document.querySelectorAll('.menu-link[data-unit]').forEach(link => {
   });
 });
 
-// Initialize dropdowns with smooth animation and dynamic file loading
+// Initialize dropdowns with smooth animation and proper image handling
 function initDropdowns() {
   const dropdowns = unitContent.querySelectorAll('.dropdown');
 
@@ -56,19 +56,30 @@ function initDropdowns() {
         }
       }
 
+      // Wait for all images in this dropdown to load before opening
+      const images = content.querySelectorAll('img');
+      await Promise.all(
+        Array.from(images).map(
+          img =>
+            new Promise(resolve => {
+              if (img.complete) resolve();
+              else img.onload = resolve;
+            })
+        )
+      );
+
       // Toggle dropdown state
       drop.classList.toggle('active');
-
       if (content.classList.contains('open')) {
-        // closing
-        content.style.maxHeight = content.scrollHeight + "px"; // set to current height
+        // Closing
+        content.style.maxHeight = content.scrollHeight + "px"; // current height
         setTimeout(() => {
           content.style.maxHeight = "0";
           content.style.opacity = "0";
         }, 10);
         content.classList.remove('open');
       } else {
-        // opening
+        // Opening
         content.classList.add('open');
         content.style.maxHeight = content.scrollHeight + "px";
         content.style.opacity = "1";
