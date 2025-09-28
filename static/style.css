@@ -1,0 +1,165 @@
+/* General Body */
+body {
+  font-family: 'Georgia', serif;
+  margin: 0;
+  background: #fdfdfd;
+  color: #222;
+  background-image: linear-gradient(90deg, rgba(200,200,200,0.05) 1px, transparent 1px),
+                    linear-gradient(rgba(200,200,200,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Header */
+header {
+  background: #1a3d6d;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.hamburger {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+
+  background: none;   /* remove default button background */
+  border: none;       /* remove default border */
+  padding: 0;         /* remove padding */
+}
+
+
+/* Side Panel */
+.side-panel {
+  height: 100%;
+  width: 250px;
+  max-width: 80%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: -250px;
+  background-color: #1a3d6d;
+  overflow-x: hidden;
+  transition: left 0.3s ease;
+  padding-top: 60px;
+}
+
+.side-panel.open {
+  left: 0;
+}
+
+.side-panel a {
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.2s;
+}
+
+.side-panel a:hover {
+  background: #27496d;
+  border-radius: 4px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 36px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Main content */
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.unit-section {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 5px solid #1a3d6d;
+  background: #fffdfa;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+/* Collapsible sections (text only) */
+.dropdown {
+  cursor: pointer;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #1a3d6d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown:hover {
+  color: #0d2a4d;
+}
+
+.dropdown .arrow {
+  transition: transform 0.3s ease;
+}
+
+.dropdown.active .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  padding: 0.5rem 0 1rem 0;
+  color: #333;
+}
+
+.dropdown-content.open {
+  display: block;
+}
+
+/* Footer */
+footer {
+  background: #1a3d6d;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.github-link img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  filter: invert(1);
+  transition: transform 0.2s;
+}
+
+.github-link img:hover {
+  transform: scale(1.2);
+}
+
