@@ -27,6 +27,6 @@ def load_lesson(lesson_name):
         return send_from_directory(lessons_dir, filename)
     else:
         abort(404, description="Lesson not found")
-
+# ♫♫♫ And I wonder... if you know... what it means... what it means, to find your dreams come true! ♫♫♫
 if __name__ == '__main__':
     app.run(debug=True)

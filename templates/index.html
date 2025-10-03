@@ -18,6 +18,7 @@
     <h1>Faisal's Geometry Portfolio</h1>
   </header>
 
+
   <nav id="side-panel" class="side-panel">
     <button id="close-btn" class="close-btn">&times;</button>
     <a href="#" class="menu-link" data-unit="unit1">Unit 1</a>
@@ -25,7 +26,7 @@
   </nav>
 
   <main id="unit-content">
-    <p>Select a unit from the menu.</p>
+    <h2 style="text-align: center; margin-bottom: 3px;"><strong>Select a unit from the menu to begin.</strong></h2>
   </main>
 
   <footer>
@@ -38,5 +39,81 @@
   </footer>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <!-- Guided Tour Modal -->
+  <div id="tour-modal" class="modal">
+    <div class="modal-content">
+      <h2 id="tour-title">Welcome!</h2>
+      <p id="tour-text">👋 Are you new here? Let’s walk through how to use this site.</p>
+      
+      <div class="tour-buttons">
+        <button id="next-btn">Next</button>
+        <button id="dont-show-btn">Do not show again</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("tour-modal");
+    const nextBtn = document.getElementById("next-btn");
+    const dontShowBtn = document.getElementById("dont-show-btn");
+    const tourTitle = document.getElementById("tour-title");
+    const tourText = document.getElementById("tour-text");
+
+    let step = 0;
+    const steps = [
+      {
+        title: "Welcome!",
+        text: "Are you new here? Let’s walk through how to use this site."
+      },
+      {
+        title: "Step 1: Navigation",
+        text: "Click the ☰ hamburger button (top left) to open the side menu."
+      },
+      {
+        title: "Step 2: Units",
+        text: "Inside the side menu, click on a unit (e.g. Unit 1) to show the lessons."
+      },
+      {
+        title: "Step 3: Lessons",
+        text: "Select any lesson from the dropdown to load it in the main area."
+      },
+      {
+        title: "All set!",
+        text: "Now you know how to navigate! Happy studying!"
+      }
+    ];
+
+    // Show every time (remove localStorage check)
+    modal.style.display = "block";
+
+    // Handle Next button
+    nextBtn.addEventListener("click", () => {
+      step++;
+      if (step < steps.length) {
+        tourTitle.textContent = steps[step].title;
+        tourText.textContent = steps[step].text;
+        if (step === steps.length - 1) {
+          nextBtn.textContent = "Finish";
+        }
+      } else {
+        modal.style.display = "none";
+      }
+    });
+
+    // Do not show again
+    dontShowBtn.addEventListener("click", () => {
+      localStorage.setItem("skipTour", "true");
+      modal.style.display = "none";
+    });
+
+    // Check if user disabled it
+    if (localStorage.getItem("skipTour") === "true") {
+      modal.style.display = "none";
+    }
+  });
+
+</script>

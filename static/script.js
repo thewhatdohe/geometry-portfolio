@@ -82,7 +82,7 @@ function initDropdowns() {
         // Opening
         content.classList.add('open');
         content.style.maxHeight = content.scrollHeight + "px";
-        content.style.opacity = "1";
+        content.style.opacity = "1"; // javascript is a dumb and stupid unorganized language
       }
     });
   });

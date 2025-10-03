@@ -1,18 +1,50 @@
-<p>
-  <strong>Distance Formula:</strong><br>
+<section id="l1-3" class="unit-section">
+  <h3>1.3 — Distance and Midpoint Formulas</h3>
+
+  <div class="objectives">
+    <ul>
+      <li>Use the distance formula to find length between two points on a plane</li>
+      <li>Find midpoint coordinates of a segment</li>
+      <li>Understand derivation from Pythagoras</li>
+    </ul>
+  </div>
+
+  <p><strong>Formulas:</strong></p>
   <ul>
-    <li>Distance between points (x₁, y₁) and (x₂, y₂): √((x₂-x₁)² + (y₂-y₁)²).</li>
+    <li><strong>Distance:</strong> d = √((x₂ − x₁)² + (y₂ − y₁)²) — derived from the Pythagorean theorem.</li>
+    <li><strong>Midpoint:</strong> M = ((x₁+x₂)/2, (y₁+y₂)/2)</li>
   </ul>
 
-  <strong>Midpoint Formula:</strong><br>
-  <ul>
-    <li>Midpoint between points (x₁, y₁) and (x₂, y₂): ((x₁+x₂)/2, (y₁+y₂)/2).</li>
-  </ul>
+  <figure>
+    <img src="/static/images/distance-formula.png" alt="distance formula diagram">
+    <figcaption>Distance formula from right triangle legs (Δx and Δy).</figcaption>
+  </figure>
 
-  <strong>Example:</strong><br>
-  <ul>
-    <li>Points A(2,3), B(4,7)</li>
-    <li>Distance = √((4-2)² + (7-3)²) = √(4 + 16) = √20</li>
-    <li>Midpoint = ((2+4)/2, (3+7)/2) = (3,5)</li>
-  </ul>
-</p>
+  <div class="worked-example">
+    <h4>Worked example — step-by-step</h4>
+    <p><strong>Q:</strong> Find distance and midpoint for A(2,3) and B(4,7).</p>
+    <ol>
+      <li>Δx = 4 − 2 = 2; Δy = 7 − 3 = 4.</li>
+      <li>Distance = √(2² + 4²) = √(4 + 16) = √20 ≈ 4.472.</li>
+      <li>Midpoint = ((2+4)/2, (3+7)/2) = (3, 5).</li>
+      <li><strong>Answer:</strong> Distance = √20, Midpoint = (3,5).</li>
+    </ol>
+  </div>
+
+  <div class="practice">
+    <ol>
+      <li>Find midpoint and distance of G(7,−2), H(−5,−6). <span class="answer">Midpoint (1, −4); Distance = 4√10.</span></li>
+      <li>What is the distance between (0,0) and (3,4)? <span class="answer">5 (3-4-5 triangle).</span></li>
+      <li>Explain how distance formula comes from Pythagoras. <span class="answer">Δx and Δy are legs of right triangle; hypotenuse is distance.</span></li>
+    </ol>
+  </div>
+
+  <div class="exam-tip">
+    On exam, label Δx and Δy clearly before squaring. If coordinates are decimals, show rounding rules.
+  </div><br>
+
+  <div class="reflection-box">
+    <time datetime="2025-04-26">Apr 26, 2025</time>
+    <p><strong>Reflection:</strong> Initially mixed up which subtraction order to use; habit now: always do x2 − x1 and y2 − y1 then square (order doesn’t matter because of squaring, but being consistent is my middle name). I've noted down all of this to use in the future if I'm having trouble with a problem and I'm not sure how to solve it. Most of the time it's just simple mistakes.</p>
+  </div>
+</section>
